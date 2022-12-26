@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "chatgpt-cluster"
+version = "0.1.0"
+description = "ChatGPT Cluster allows you to register chatgpt services that are self maintained by their creators. The cluster is responsible for distributing the incoming chatgpt conversation request to registered authenticated healthy chatgpt services. More information is available in the project source code."
+authors = ["ahmetkca <ahmet.karapinar@ontariotechu.net>"]
+readme = "README.md"
+packages = [{include = "chatgpt_cluster"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.88.0"
+uvicorn = "^0.20.0"
+python-multipart = "^0.0.5"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+boto3 = "^1.26.37"
+python-dotenv = "^0.21.0"
+httpx = "^0.23.1"
+sse-starlette = "^1.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pynvim = "^0.4.3"
+black = "^22.12.0"
+boto3-stubs = {version = "1.26.37", extras = ["cognito-identity", "cognito-idp", "cognito-sync", "dynamodb", "dynamodbstreams", "ecr", "ecr-public", "ecs", "eks", "s3", "s3control", "s3outposts", "secretsmanager"]}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
